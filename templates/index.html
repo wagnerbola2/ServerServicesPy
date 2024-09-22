@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/style.css') }}">   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços Servidor 28</title>
+  </head>
+  <body>
+    <h1>Serviços Servidor 28</h1>
+    <div id="divTable">
+      <table>
+        <tr>
+          <th>Id</th>
+          <th>Descrição</th>
+          <th>Status</th>
+        </tr>
+        {% for service in services %}
+        <tr>
+          <td>{{service[0]}}</td>
+          <td>{{service[1]}}</td>
+          {% if service[2] == "RUNNING" %}
+            <td class="running">{{service[2]}}</td>
+          {% else %}
+            <td class="stopped">{{service[2]}}</td>
+          {% endif %}
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>
