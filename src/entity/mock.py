@@ -1,15 +1,16 @@
 import win32service
 
 def getMockServices():
-  return [("LicenseServer", "01.01.01 - TOTVS | License Server", (16, win32service.SERVICE_RUNNING, 0)),
-            ("tp12_dbAcess", "01.02.01 - TOTVS | Db Acess", (16, win32service.SERVICE_RUNNING, 0)),
-            ("tp12_master", "01.03.01 - TOTVS | Master", (16, win32service.SERVICE_RUNNING, 0)),
-            ("tp12_salve1", "01.03.02 - TOTVS | Slave1", (16, win32service.SERVICE_RUNNING, 0)),
-            ("tp12_salve2", "01.03.03 - TOTVS | Slave2", (16, win32service.SERVICE_RUNNING, 0)),
-            ("tp12_salve3", "01.03.04 - TOTVS | Slave3", (16, win32service.SERVICE_RUNNING, 0)),
-            ("tp12_salve4", "01.03.05 - TOTVS | Slave4", (16, win32service.SERVICE_STOPPED, 0)),
-            ("tp12_salve5", "01.03.06 - TOTVS | Slave5", (16, win32service.SERVICE_STOPPED, 0)),
-            ("tp12_WsRest", "01.04.01 - TOTVS | WS REST", (16, win32service.SERVICE_RUNNING, 0)),
-            ("tp12_WsSoap", "01.04.02 - TOTVS | WS Soap", (16, win32service.SERVICE_STOPPED, 0)),
-            ("tp12_Schedule", "01.05.01 - TOTVS | Schedule", (16, win32service.SERVICE_RUNNING, 0)),
-            ]
+  return [
+    ('auth', '01.00.01 - Servico | Auth', (16, win32service.SERVICE_RUNNING, 449, 0, 0, 0, 0)),
+	  ('bancoDados', '01.01.01 - Servico | BancoDados', (16, win32service.SERVICE_RUNNING, 1, 0, 0, 0, 0)),
+	  ('master', '01.02.01 - Servico | Master', (16, win32service.SERVICE_RUNNING, 449, 0, 0, 0, 0)),
+	  ('slave1', '01.03.01 - Servico | Slave1', (16, win32service.SERVICE_RUNNING, 449, 0, 0, 0, 0)),
+	  ('slave2', '01.03.02 - Servico | Slave2', (16, win32service.SERVICE_RUNNING, 449, 0, 0, 0, 0)),
+	  ('slave3', '01.03.03 - Servico | Slave3', (16, win32service.SERVICE_RUNNING, 449, 0, 0, 0, 0)),
+	  ('slave4', '01.03.04 - Servico | Slave4', (16, win32service.SERVICE_STOPPED, 449, 0, 0, 0, 0)),
+	  ('slave5', '01.03.05 - Servico | Slave5', (16, win32service.SERVICE_STOPPED, 449, 0, 0, 0, 0)),
+	  ('Rest', '01.05.01 - Servico | Api Rest', (16, win32service.SERVICE_RUNNING, 449, 0, 0, 0, 0))
+	  ('Soap', '01.05.02 - Servico | Api Soap', (16, win32service.SERVICE_STOPPED, 449, 0, 0, 0, 0))
+	  ('Schedule', '01.06.01 - Servico | Schedule', (16, win32service.SERVICE_RUNNING, 449, 0, 0, 0, 0))
+  ]

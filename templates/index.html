@@ -4,29 +4,30 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/style.css') }}">   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serviços Servidor 28</title>
+	<meta http-equiv="refresh" content="15">
+    <title>Serviços Servidor {{server}}</title>
   </head>
   <body>
-    <h1>Serviços Servidor 28</h1>
-    <div id="divTable">
-      <table>
-        <tr>
-          <th>Id</th>
-          <th>Descrição</th>
-          <th>Status</th>
-        </tr>
+    <h1>Serviços Servidor {{server}}</h1>
+    <section class="secao4" id="sobre">
+      <div class="secao4-div">
         {% for service in services %}
-        <tr>
-          <td>{{service[0]}}</td>
-          <td>{{service[1]}}</td>
           {% if service[2] == "RUNNING" %}
-            <td class="running">{{service[2]}}</td>
-          {% else %}
-            <td class="stopped">{{service[2]}}</td>
+            <div class="secao4-div-card running">
+              <h3>{{service[1]}}</h3>
+              <!--<p>{{service[2]}} ✔️</p>-->
+            </div>
+            {% else %}
+            <div class="secao4-div-card stopped">
+              <h3>{{service[1]}}</h3>
+              <!--<p>{{service[2]}} 🛑</p>-->
+            </div>
           {% endif %}
-        </tr>
         {% endfor %}
-      </table>
+      </div>
+    </section>
+    <div class="copyright-div">
+      <p>© 2024 Wagner Nunes<p>
     </div>
   </body>
 </html>
