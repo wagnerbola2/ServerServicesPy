@@ -15,19 +15,17 @@
           {% if service[2] == "RUNNING" %}
             <div class="secao4-div-card running">
               <h3>{{service[1]}}</h3>
-              <!--<p>{{service[2]}} ✔️</p>-->
             </div>
             {% else %}
             <div class="secao4-div-card stopped">
               <h3>{{service[1]}}</h3>
-              <!--<p>{{service[2]}} 🛑</p>-->
             </div>
           {% endif %}
         {% endfor %}
       </div>
     </section>
-    <div class="copyright-div">
-      <p>© 2024 Wagner Nunes<p>
-    </div>
+    <footer>
+      <p>&copy; 2024 Wagner Nunes</p>
+    </footer>
   </body>
 </html>

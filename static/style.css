@@ -1,80 +1,79 @@
-h1{
-  width: 100%;
-  text-align: center;
-  color: white;
+html, body {
+	background-color: black;
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
-body {
-  background-color: black;
+h1 {
+	width: 100%;
+	text-align: center;
+	color: white;
 }
-.secao4-div-card.running{
-  p{
-    color: darkgreen;
-  }
-}
-.secao4-div-card.stopped{
-  background-color: red;
-  border-width: 10px;
-  p{
-    color: black;
-  }
+h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	margin-top: 5px;
+	margin-bottom: 10px;
 }
 .secao4 {
-  margin: 0;
+	margin: 0;
+	padding-bottom: 50px;
 }
 .secao4-div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 10px;
-  text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 10px;
+	text-align: center;
 }
-.secao4-div-card{
-	counter-increment: divnumber
+.secao4-div-card.stopped{
+	background-color: red;
+	border-width: 10px;
 }
 .secao4-div-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: calc(100% / 5 - 60px);
-  margin: 5px;
-  padding: 10px;
-  box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
-  background-color: darkgray;
-  transition: all 0.5s ease;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: calc(100% / 3 - 90px);
+	height: 60px;
+	margin: 5px;
+	padding: 25px;
+	box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.1);
+	border-radius: 15px;
+	background-color: darkgray;
+	transition: all 0.5s ease;
 }
-@media screen and (max-width: 1800px) {
-  .secao4-div-card  {
-    width: calc(100% / 7 - 60px);
-  }
-  .secao4-div-card h3 {
-    font-size: 25px;  
-  }
+.secao4-div:has(div:nth-last-child(n + 15)) {
+	.secao4-div-card {
+		width: calc(100% / 4 - 50px);
+		height: 55px;
+		padding: 20px;
+	}
 }
-.secao4-div-card h3 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-}
-.secao4-div-card p {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  line-height: 1.5;
-  margin-bottom: 20px;
+.secao4-div:has(div:nth-last-child(n + 20)) {
+	.secao4-div-card {
+		width: calc(100% / 6 - 60px);
+		height: 55px;
+		padding: 15px;
+		h3 {
+			font-size: 18px;		
+		}
+	}
 }
 .secao4-div-card:hover {
-  transform: scale(1.1);
-  z-index: 1;
+	transform: scale(1.1);
+	z-index: 1;
 }
-.copyright-div{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.copyright-div p{
-  color: white;
-  font-family: arial;
-  font-size: 10px;
+footer {
+	justify-content: center;
+	width: 100%;
+	bottom: 0;
+	position: absolute;
+	text-align: center;
+	p {
+		color: white;
+		font-family: arial;
+		font-size: 10px;
+	}
 }
