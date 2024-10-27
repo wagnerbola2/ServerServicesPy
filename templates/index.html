@@ -24,8 +24,45 @@
         {% endfor %}
       </div>
     </section>
+    <div id="contextMenu" class="context-menu">
+      <ul>
+          <li onclick="executarAcao('acao1')">Ação 1</li>
+          <li onclick="executarAcao('acao2')">Ação 2</li>
+          <li onclick="executarAcao('acao3')">Ação 3</li>
+      </ul>
+    </div>
     <footer>
       <p>&copy; 2024 Wagner Nunes</p>
     </footer>
+    <script>
+       let menu = document.getElementById("menu-contextual");
+       let divAlvo = null;  // Para armazenar a div clicada
+
+      document.addEventListener("contextmenu", function(event) {
+        event.preventDefault();
+        let element = event.target;
+        
+        // Verificar se o clique foi em uma div específica
+        if (element.classList.contains("secao4-div-card")) {
+            divAlvo = element;  // Armazenar o elemento clicado
+            menu.style.display = "block";
+            menu.style.left = event.pageX + "px";
+            menu.style.top = event.pageY + "px";
+        } else {
+            menu.style.display = "none";
+        }
+      });
+
+      document.addEventListener('click', function() {
+          contextMenu.style.display = 'none';
+      });
+
+      function executarAcao(acao) {
+          fetch(`/executar-acao/${acao}`, {method: 'POST'})
+              .then(response => response.text())
+              .then(data => alert(data))
+              .catch(error => console.error('Erro:', error));
+      }
+    </script> 
   </body>
 </html>

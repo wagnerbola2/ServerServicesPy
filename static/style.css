@@ -77,3 +77,23 @@ footer {
 		font-size: 10px;
 	}
 }
+.context-menu {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	border: 1px solid #ccc;
+	padding: 10px;
+	z-index: 1000;
+}
+.context-menu ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+.context-menu ul li {
+	padding: 5px 10px;
+	cursor: pointer;
+}
+.context-menu ul li:hover {
+	background-color: #e9e9e9;
+}
